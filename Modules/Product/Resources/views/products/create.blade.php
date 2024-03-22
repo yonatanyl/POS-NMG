@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="category_id">Kategori <span class="text-danger">*</span></label>
                                     <div class="input-group">
                                         <select class="form-control" name="category_id" id="category_id" required>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
-                        <button class="btn btn-primary">Tambah Produk <i class="bi bi-check"></i></button>
+                        <button class="btn btn-primary">Simpan <i class="bi bi-check"></i></button>
                     </div>
                 </div>
             </div>
