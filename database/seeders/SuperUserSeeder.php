@@ -30,11 +30,19 @@ class SuperUserSeeder extends Seeder
             'is_active' => 1
         ]);
 
+        $user3 = User::create([
+            'name' => 'Administrator',
+            'email' => 'admin2@test.com',
+            'password' => Hash::make(12345678),
+            'is_active' => 1
+        ]);
+
         $superAdmin = Role::create([
             'name' => 'Super Admin'
         ]);
 
         $user1->assignRole($superAdmin);
         $user2->assignRole($superAdmin);
+        $user3->assignRole($superAdmin);
     }
 }
