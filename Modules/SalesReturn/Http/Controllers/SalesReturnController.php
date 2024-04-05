@@ -64,6 +64,7 @@ class SalesReturnController extends Controller
                 'discount_amount' => Cart::instance('sale_return')->discount() * 100,
             ]);
 
+            $jmlkg = $request->jmlkg;
             foreach (Cart::instance('sale_return')->content() as $cart_item) {
                 SaleReturnDetail::create([
                     'sale_return_id' => $sale_return->id,
@@ -71,6 +72,7 @@ class SalesReturnController extends Controller
                     'product_name' => $cart_item->name,
                     'product_code' => $cart_item->options->code,
                     'quantity' => $cart_item->qty,
+                    'jmlkg' => $jmlkg,
                     'price' => $cart_item->price * 100,
                     'unit_price' => $cart_item->options->unit_price * 100,
                     'sub_total' => $cart_item->options->sub_total * 100,
@@ -82,7 +84,8 @@ class SalesReturnController extends Controller
                 if ($request->status == 'Completed') {
                     $product = Product::findOrFail($cart_item->id);
                     $product->update([
-                        'product_quantity' => $product->product_quantity + $cart_item->qty
+                        'product_quantity' => $product->product_quantity + $cart_item->qty,
+                        'jumlah_kg' => $product->jumlah_kg + $jmlkg
                     ]);
                 }
             }
@@ -188,6 +191,7 @@ class SalesReturnController extends Controller
                 'discount_amount' => Cart::instance('sale_return')->discount() * 100,
             ]);
 
+            $jmlkg = $request->jmlkg;
             foreach (Cart::instance('sale_return')->content() as $cart_item) {
                 SaleReturnDetail::create([
                     'sale_return_id' => $sale_return->id,
@@ -195,6 +199,7 @@ class SalesReturnController extends Controller
                     'product_name' => $cart_item->name,
                     'product_code' => $cart_item->options->code,
                     'quantity' => $cart_item->qty,
+                    'jmlkg' => $jmlkg,
                     'price' => $cart_item->price * 100,
                     'unit_price' => $cart_item->options->unit_price * 100,
                     'sub_total' => $cart_item->options->sub_total * 100,
@@ -206,7 +211,8 @@ class SalesReturnController extends Controller
                 if ($request->status == 'Completed') {
                     $product = Product::findOrFail($cart_item->id);
                     $product->update([
-                        'product_quantity' => $product->product_quantity + $cart_item->qty
+                        'product_quantity' => $product->product_quantity + $cart_item->qty,
+                        'jumlah_kg' => $product->jumlah_kg + $jmlkg
                     ]);
                 }
             }

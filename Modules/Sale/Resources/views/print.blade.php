@@ -47,6 +47,7 @@
                                 <th class="align-middle" scope="col" style="width: 30%;">Product</th>
                                 <th class="align-middle" scope="col">Net Unit Price</th>
                                 <th class="align-middle" scope="col">Quantity</th>
+                                <th class="align-middle" scope="col">Jumlah KG</th>
                                 <th class="align-middle">Discount</th>
                                 <th class="align-middle">Tax</th>
                                 <th class="align-middle">Sub Total</th>
@@ -79,6 +80,13 @@
 
                                     <td class="align-middle">
                                     @foreach($sale->saleDetails as $item)
+                                        {{ $item->jmlkg }} KG
+                                        <br>
+                                    @endforeach
+                                    </td>
+
+                                    <td class="align-middle">
+                                    @foreach($sale->saleDetails as $item)
                                         {{ format_currency($item->product_discount_amount) }}
                                         <br>
                                     @endforeach
@@ -100,11 +108,11 @@
                             </tr>
                             </tbody>
                             <tr>
-                                <td colspan="6">Jenis Pembayaran    : Tunai <span style="float: right;">Total : {{ format_currency($sale->total_amount) }}<br>Biaya Pengiriman  : {{ format_currency($sale->shipping_amount) }}<br>Sisa Tagihan : {{ format_currency($sale->due_amount)}}</span><br>Tanggal Kirim :   {{ \Carbon\Carbon::parse($sale->date)->format('d M, Y') }}</td>
+                                <td colspan="7">Jenis Pembayaran    : Tunai <span style="float: right;">Total : {{ format_currency($sale->total_amount) }}<br>Biaya Pengiriman  : {{ format_currency($sale->shipping_amount) }}<br>Sisa Tagihan : {{ format_currency($sale->due_amount)}}</span><br>Tanggal Kirim :   {{ \Carbon\Carbon::parse($sale->date)->format('d M, Y') }}</td>
                             </tr>
                             <tr>
-                                <td colspan="3">Armada Pengiriman</td>
-                                <td colspan="3"><span style="float: right;">Total Yang Harus Dibayar    : {{ format_currency($sale->total_amount - $sale->due_amount) }}</span></td>
+                                <td colspan="4">Armada Pengiriman</td>
+                                <td colspan="4"><span style="float: right;">Total Yang Harus Dibayar    : {{ format_currency($sale->total_amount - $sale->due_amount) }}</span></td>
                             </tr>
 
                         </table>

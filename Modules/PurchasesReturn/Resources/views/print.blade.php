@@ -58,6 +58,7 @@
                                 <th class="align-middle">Produk</th>
                                 <th class="align-middle">Harga</th>
                                 <th class="align-middle">Kuantitas</th>
+                                <th class="align-middle">Jmlh KG</th>
                                 <th class="align-middle">Diskon</th>
                                 <th class="align-middle">Pajak</th>
                                 <th class="align-middle">Sub Total</th>
@@ -77,6 +78,9 @@
 
                                     <td class="align-middle">
                                         {{ $item->quantity }}
+                                    </td>
+                                    <td class="align-middle">
+                                        {{ $item->jmlkg }}
                                     </td>
 
                                     <td class="align-middle">

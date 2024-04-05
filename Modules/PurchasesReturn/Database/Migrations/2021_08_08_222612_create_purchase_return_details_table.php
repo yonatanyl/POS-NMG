@@ -20,6 +20,7 @@ class CreatePurchaseReturnDetailsTable extends Migration
             $table->string('product_name');
             $table->string('product_code');
             $table->integer('quantity');
+            $table->decimal('jmlkg', 8, 2);
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('unit_price');
             $table->unsignedBigInteger('sub_total');

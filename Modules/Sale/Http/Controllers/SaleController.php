@@ -66,18 +66,21 @@ class SaleController extends Controller
                 'tax_amount' => Cart::instance('sale')->tax() * 100,
                 'discount_amount' => Cart::instance('sale')->discount() * 100,
             ]);
-
+            
+            $jmlkg = $request->jmlkg;
             foreach (Cart::instance('sale')->content() as $cart_item) {
                 $product = Product::find($cart_item->id); // Use find() for non-failing check
                 if (!$product) {
                     return back()->with('error', 'Product ' . $cart_item->name . ' is no longer available.');
                 }
+                // dd($jmlkg);
                 SaleDetails::create([
                     'sale_id' => $sale->id,
                     'product_id' => $cart_item->id,
                     'product_name' => $cart_item->name,
                     'product_code' => $cart_item->options->code,
                     'quantity' => $cart_item->qty,
+                    'jmlkg' => $jmlkg,
                     'price' => $cart_item->price * 100,
                     'unit_price' => $cart_item->options->unit_price * 100,
                     'sub_total' => $cart_item->options->sub_total * 100,
@@ -85,10 +88,12 @@ class SaleController extends Controller
                     'product_discount_type' => $cart_item->options->product_discount_type,
                     'product_tax_amount' => $cart_item->options->product_tax * 100,
                 ]);
+                // $jmlkg = $cart_item->options->jumlah_kg;
 
                 if ($request->status == 'Shipped' || $request->status == 'Completed') {
                     $product->update([
-                        'product_quantity' => $product->product_quantity - $cart_item->qty
+                        'product_quantity' => $product->product_quantity - $cart_item->qty,
+                        'jumlah_kg' => $product->jumlah_kg - $jmlkg
                     ]);
                 }
             }
@@ -153,6 +158,7 @@ class SaleController extends Controller
                     'sub_total'   => $sale_detail->sub_total,
                     'code'        => $sale_detail->product_code,
                     'stock'       => $product->product_quantity,
+                    'jmlkg'       => $product->jmlkg,
                     'product_tax' => $sale_detail->product_tax_amount,
                     'unit_price'  => $sale_detail->unit_price
                 ]
@@ -213,6 +219,7 @@ class SaleController extends Controller
                 'discount_amount' => Cart::instance('sale')->discount() * 100,
             ]);
 
+            $jmlkg = $request->jmlkg;
             foreach (Cart::instance('sale')->content() as $cart_item) {
                 $product = Product::find($cart_item->id);
                 if (!$product) {
@@ -224,6 +231,7 @@ class SaleController extends Controller
                     'product_name' => $cart_item->name,
                     'product_code' => $cart_item->options->code,
                     'quantity' => $cart_item->qty,
+                    'jmlkg' => $jmlkg,
                     'price' => $cart_item->price * 100,
                     'unit_price' => $cart_item->options->unit_price * 100,
                     'sub_total' => $cart_item->options->sub_total * 100,
@@ -234,7 +242,8 @@ class SaleController extends Controller
 
                 if ($request->status == 'Shipped' || $request->status == 'Completed') {
                     $product->update([
-                        'product_quantity' => $product->product_quantity - $cart_item->qty
+                        'product_quantity' => $product->product_quantity - $cart_item->qty,
+                        'jumlah_kg' => $product->jumlah_kg - $jmlkg,
                     ]);
                 }
             }

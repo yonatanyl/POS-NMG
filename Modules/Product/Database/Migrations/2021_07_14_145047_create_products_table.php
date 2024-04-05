@@ -21,7 +21,8 @@ class CreateProductsTable extends Migration
             $table->integer('product_quantity');
             $table->unsignedBigInteger('product_cost');
             $table->unsignedBigInteger('product_price');
-            $table->string('product_unit')->nullable();
+            $table->string('product_unit');
+            $table->decimal('jumlah_kg', 8, 2);
             $table->integer('product_stock_alert');
             $table->integer('product_order_tax')->nullable();
             $table->tinyInteger('product_tax_type')->nullable();

@@ -24,8 +24,8 @@ class ProductDatabaseSeeder extends Seeder
         ]);
 
         Unit::create([
-            'name' => 'Piece',
-            'short_name' => 'PC',
+            'name' => 'Box',
+            'short_name' => 'Box',
             'operator' => '*',
             'operation_value' => 1
         ]);

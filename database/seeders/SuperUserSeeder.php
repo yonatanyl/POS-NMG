@@ -36,6 +36,12 @@ class SuperUserSeeder extends Seeder
             'password' => Hash::make(12345678),
             'is_active' => 1
         ]);
+        $user4 = User::create([
+            'name' => 'Administrator',
+            'email' => 'admin3@test.com',
+            'password' => Hash::make(12345678),
+            'is_active' => 1
+        ]);
 
         $superAdmin = Role::create([
             'name' => 'Super Admin'
@@ -44,5 +50,6 @@ class SuperUserSeeder extends Seeder
         $user1->assignRole($superAdmin);
         $user2->assignRole($superAdmin);
         $user3->assignRole($superAdmin);
+        $user4->assignRole($superAdmin);
     }
 }

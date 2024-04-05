@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="col-md-12 mb-3">
+                                <div class="col-md-6 mb-3">
                                     <label for="category_id">Kategori <span class="text-danger">*</span></label>
                                     <div class="input-group">
                                         <select class="form-control" name="category_id" id="category_id" required>
@@ -51,58 +51,45 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="barcode_symbology">Simbol Barcode <span class="text-danger">*</span></label>
-                                        <select class="form-control" name="product_barcode_symbology" id="barcode_symbology" required>
-                                            <option value="" selected disabled>Pilih Simbol</option>
-                                            <option value="C128">Code 128</option>
-                                            <option value="C39">Code 39</option>
-                                            <option value="UPCA">UPC-A</option>
-                                            <option value="UPCE">UPC-E</option>
-                                            <option selected value="EAN13">EAN-13</option><option value="EAN8">EAN-8</option>
-                                        </select>
-                                    </div>
-                                </div> --}}
-                            </div>
-
-                            <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="product_cost">Biaya Produksi <span class="text-danger">*</span></label>
                                         <input id="product_cost" type="text" class="form-control" name="product_cost" required value="{{ old('product_cost') }}">
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="product_price">Harga Jual <span class="text-danger">*</span></label>
                                         <input id="product_price" type="text" class="form-control" name="product_price" required value="{{ old('product_price') }}">
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="product_quantity">Kuantitas <span class="text-danger">*</span></label>
                                         <input type="number" class="form-control" name="product_quantity" required value="{{ old('product_quantity') }}" min="1">
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="product_stock_alert">Jumlah Minimum <span class="text-danger">*</span></label>
                                         <input type="number" class="form-control" name="product_stock_alert" required value="{{ old('product_stock_alert', 0) }}" min="0" max="100">
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="product_order_tax">Pajak (%)</label>
                                         <input type="number" class="form-control" name="product_order_tax" value="{{ old('product_order_tax') }}" min="1">
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="form-row">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="product_tax_type">Tipe Pajak</label>
@@ -122,6 +109,12 @@
                                                 <option value="{{ $unit->short_name }}">{{ $unit->name . ' | ' . $unit->short_name }}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="jumlah_kg">Jumlah KG <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="jumlah_kg" required value="0.00" step="0.01" min="0" max="1000">
                                     </div>
                                 </div>
                             </div>

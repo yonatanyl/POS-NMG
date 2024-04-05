@@ -23,6 +23,7 @@
                     <th class="align-middle text-center">Harga Produk</th>
                     <th class="align-middle text-center">Stok Barang</th>
                     <th class="align-middle text-center">Kuantitas</th>
+                    <th class="align-middle text-center">Jumlah KG</th>
                     <th class="align-middle text-center">Diskon</th>
                     <th class="align-middle text-center">Pajak</th>
                     <th class="align-middle text-center">Total Pembayaran</th>
@@ -55,6 +56,9 @@
 
                                 <td class="align-middle text-center">
                                     @include('livewire.includes.product-cart-quantity')
+                                </td>
+                                <td class="align-middle text-center">
+                                    @include('livewire.includes.product-cart-jmlkg')
                                 </td>
 
                                 <td class="align-middle text-center">

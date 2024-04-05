@@ -63,6 +63,7 @@ class PurchaseController extends Controller
                 'discount_amount' => Cart::instance('purchase')->discount() * 100,
             ]);
 
+            $jmlkg = $request->jmlkg;
             foreach (Cart::instance('purchase')->content() as $cart_item) {
                 PurchaseDetail::create([
                     'purchase_id' => $purchase->id,
@@ -70,6 +71,7 @@ class PurchaseController extends Controller
                     'product_name' => $cart_item->name,
                     'product_code' => $cart_item->options->code,
                     'quantity' => $cart_item->qty,
+                    'jmlkg' => $jmlkg,
                     'price' => $cart_item->price * 100,
                     'unit_price' => $cart_item->options->unit_price * 100,
                     'sub_total' => $cart_item->options->sub_total * 100,
@@ -81,7 +83,8 @@ class PurchaseController extends Controller
                 if ($request->status == 'Completed') {
                     $product = Product::findOrFail($cart_item->id);
                     $product->update([
-                        'product_quantity' => $product->product_quantity + $cart_item->qty
+                        'product_quantity' => $product->product_quantity + $cart_item->qty,
+                        'jumlah_kg' => $product->jumlah_kg + $jmlkg
                     ]);
                 }
             }
@@ -186,6 +189,7 @@ class PurchaseController extends Controller
                 'discount_amount' => Cart::instance('purchase')->discount() * 100,
             ]);
 
+            $jmlkg = $request->jmlkg;
             foreach (Cart::instance('purchase')->content() as $cart_item) {
                 PurchaseDetail::create([
                     'purchase_id' => $purchase->id,
@@ -193,6 +197,7 @@ class PurchaseController extends Controller
                     'product_name' => $cart_item->name,
                     'product_code' => $cart_item->options->code,
                     'quantity' => $cart_item->qty,
+                    'jmlkg' => $jmlkg,
                     'price' => $cart_item->price * 100,
                     'unit_price' => $cart_item->options->unit_price * 100,
                     'sub_total' => $cart_item->options->sub_total * 100,
@@ -204,7 +209,8 @@ class PurchaseController extends Controller
                 if ($request->status == 'Completed') {
                     $product = Product::findOrFail($cart_item->id);
                     $product->update([
-                        'product_quantity' => $product->product_quantity + $cart_item->qty
+                        'product_quantity' => $product->product_quantity + $cart_item->qty,
+                        'jumlah_kg' => $product->jumlah_kg + $jmlkg,
                     ]);
                 }
             }
