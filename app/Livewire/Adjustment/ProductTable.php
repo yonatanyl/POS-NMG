@@ -5,6 +5,7 @@ namespace App\Livewire\Adjustment;
 use Illuminate\Support\Collection;
 use Livewire\Component;
 use Modules\Product\Entities\Product;
+use Modules\Adjustment\Entities\Adjustment;
 
 class ProductTable extends Component
 {

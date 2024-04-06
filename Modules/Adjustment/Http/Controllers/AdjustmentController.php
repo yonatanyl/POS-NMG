@@ -38,6 +38,7 @@ class AdjustmentController extends Controller
             'note'        => 'nullable|string|max:1000',
             'product_ids' => 'required',
             'quantities'  => 'required',
+            'jmlhkg'      => 'required',
             'types'       => 'required'
         ]);
 
@@ -52,6 +53,7 @@ class AdjustmentController extends Controller
                     'adjustment_id' => $adjustment->id,
                     'product_id'    => $id,
                     'quantity'      => $request->quantities[$key],
+                    'jmlkg'        => $request->jmlhkg[$key],
                     'type'          => $request->types[$key]
                 ]);
 
@@ -59,11 +61,13 @@ class AdjustmentController extends Controller
 
                 if ($request->types[$key] == 'add') {
                     $product->update([
-                        'product_quantity' => $product->product_quantity + $request->quantities[$key]
+                        'product_quantity' => $product->product_quantity + $request->quantities[$key],
+                        'jumlah_kg' => $product->jumlah_kg + $request->jmlhkg[$key]
                     ]);
                 } elseif ($request->types[$key] == 'sub') {
                     $product->update([
-                        'product_quantity' => $product->product_quantity - $request->quantities[$key]
+                        'product_quantity' => $product->product_quantity - $request->quantities[$key],
+                        'jumlah_kg' => $product->jumlah_kg - $request->jmlhkg[$key]
                     ]);
                 }
             }

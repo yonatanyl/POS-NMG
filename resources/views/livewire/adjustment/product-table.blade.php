@@ -22,7 +22,9 @@
                 <th class="align-middle">Nama Produk</th>
                 <th class="align-middle">Kode</th>
                 <th class="align-middle">Stok</th>
+                <th class="align-middle">Jumlah KG</th>
                 <th class="align-middle">Kuantitas</th>
+                <th class="align-middle">Kuantitas KG</th>
                 <th class="align-middle">Tipe</th>
                 <th class="align-middle">Aksi</th>
             </tr>
@@ -39,9 +41,17 @@
                                 {{ $product['product_quantity'] ?? $product['product']['product_quantity'] }} {{ $product['product_unit'] ?? $product['product']['product_unit'] }}
                             </span>
                         </td>
+                        <td class="align-middle text-center">
+                            <span class="badge badge-info">
+                                {{ $product['jumlah_kg'] ?? $product['product']['jumlah_kg'] }}
+                            </span>
+                        </td>
                         <input type="hidden" name="product_ids[]" value="{{ $product['product']['id'] ?? $product['id'] }}">
                         <td class="align-middle">
                             <input type="number" name="quantities[]" min="1" class="form-control" value="{{ $product['quantity'] ?? 1 }}">
+                        </td>
+                        <td class="align-middle">
+                            <input type="number" name="jmlhkg[]" min="1" class="form-control" value="{{ number_format($product['quantity'] ?? 1, 2, '.', '') }}" step="0.01">
                         </td>
                         <td class="align-middle">
                             @if(isset($product['type']))
@@ -72,7 +82,7 @@
                 @endforeach
             @else
                 <tr>
-                    <td colspan="7" class="text-center">
+                    <td colspan="9" class="text-center">
                         <span class="text-danger">
                             Silahkan Cari dan Pilih Produk!
                         </span>

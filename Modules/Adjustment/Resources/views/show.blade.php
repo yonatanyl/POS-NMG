@@ -43,6 +43,7 @@
                                     <th>Nama Produk</th>
                                     <th>Kode Produk</th>
                                     <th>Kuantitas</th>
+                                    <th>Jumlah KG</th>
                                     <th>Tipe Produk</th>
                                 </tr>
 
@@ -51,6 +52,7 @@
                                         <td>{{ $adjustedProduct->product->product_name }}</td>
                                         <td>{{ $adjustedProduct->product->product_code }}</td>
                                         <td>{{ $adjustedProduct->quantity }}</td>
+                                        <td>{{ $adjustedProduct->jmlkg }}</td>
                                         <td>
                                             @if($adjustedProduct->type == 'add')
                                                 (+) Penambahan
