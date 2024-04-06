@@ -13,6 +13,10 @@
         height: 250px; /* Sesuaikan tinggi baris dengan yang Anda inginkan */
         width: 10px;
     }
+    .table-bordered {
+        background-color: #000 !important; /* Ubah warna latar belakang tabel menjadi hitam */
+    }
+
 </style>
 <body>
 <div class="container-fluid">
@@ -41,26 +45,33 @@
                     </div>
 
                     <div class="table-responsive-sm" style="margin-top: 5px; overflow: hidden;">
-                    <table class="table table-bordered table-fixed" style="table-layout: fixed;">
+                    <table class="table table-bordered table-fixed table-dark" style="table-layout: fixed;">
                             <thead>
                             <tr>
+                                <th class="align-middle" scope="col" style="width: 5%;">No</th>
                                 <th class="align-middle" scope="col" style="width: 30%;">Product</th>
-                                <th class="align-middle" scope="col">Net Unit Price</th>
-                                <th class="align-middle" scope="col">Quantity</th>
-                                <th class="align-middle" scope="col">Jumlah KG</th>
+                                <th cospan="2" class="align-middle" scope="col" style="width: 13%">Harga</th>
+                                <th class="align-middle" scope="col" style="width: 10%">Quantity</th>
+                                <th class="align-middle" scope="col">Jml KG</th>
                                 <th class="align-middle">Discount</th>
-                                <th class="align-middle">Tax</th>
-                                <th class="align-middle">Sub Total</th>
+                                <th class="align-middle" style="width: 8%">Tax</th>
+                                <th class="align-middle">Total</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr class="custom-tr">
-                                    <td class="align-middle">
+
+                            <td class="align-middle">
                                     @php $counter = 1 @endphp
-                                    @foreach($sale->saleDetails as $item)
-                                        <strong>{{ $counter }}.</strong> {{ $item->product_name }} || <strong>{{$item->product_code}}</strong>
+                                        <strong>{{ $counter }}.</strong>
                                         <br>
                                     @php $counter++ @endphp
+                                    </td>
+
+                                    <td class="align-middle">
+                                    @foreach($sale->saleDetails as $item)
+                                        {{ $item->product_name }} || <strong>{{$item->product_code}}</strong>
+                                        <br>
                                     @endforeach
                                     </td>
 
@@ -108,7 +119,7 @@
                             </tr>
                             </tbody>
                             <tr>
-                                <td colspan="7">Jenis Pembayaran    : Tunai <span style="float: right;">Total : {{ format_currency($sale->total_amount) }}<br>Biaya Pengiriman  : {{ format_currency($sale->shipping_amount) }}<br>Sisa Tagihan : {{ format_currency($sale->due_amount)}}</span><br>Tanggal Kirim :   {{ \Carbon\Carbon::parse($sale->date)->format('d M, Y') }}</td>
+                                <td colspan="8">Jenis Pembayaran    : Tunai <span style="float: right;">Total : {{ format_currency($sale->total_amount) }}<br>Biaya Pengiriman  : {{ format_currency($sale->shipping_amount) }}<br>Sisa Tagihan : {{ format_currency($sale->due_amount)}}</span><br>Tanggal Kirim :   {{ \Carbon\Carbon::parse($sale->date)->format('d M, Y') }}</td>
                             </tr>
                             <tr>
                                 <td colspan="4">Armada Pengiriman</td>

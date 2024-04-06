@@ -7,7 +7,7 @@
 
     <title>Send Reset Password Link | {{ config('app.name') }}</title>
 
-    <!-- Favicon -->
+    <!--  -->
     {{-- <link rel="icon" href="{{ asset('images/favicon.png') }}"> --}}
     <!-- CoreUI CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" crossorigin="anonymous">
