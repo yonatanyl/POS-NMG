@@ -22,8 +22,9 @@
                     <th class="align-middle">Produk</th>
                     <th class="align-middle text-center">Harga Produk</th>
                     <th class="align-middle text-center">Stok Barang</th>
-                    <th class="align-middle text-center">Kuantitas</th>
                     <th class="align-middle text-center">Jumlah KG</th>
+                    <th class="align-middle text-center">Kuantitas</th>
+                    <th class="align-middle text-center">Kuantitas KG</th>
                     <th class="align-middle text-center">Diskon</th>
                     <th class="align-middle text-center">Pajak</th>
                     <th class="align-middle text-center">Total Pembayaran</th>
@@ -52,6 +53,9 @@
 
                                 <td class="align-middle text-center text-center">
                                     <span class="badge badge-info">{{ $cart_item->options->stock . ' ' . $cart_item->options->unit }}</span>
+                                </td>
+                                <td class="align-middle text-center text-center">
+                                    <span class="badge badge-info">{{ $cart_item->options->jmlkg }}</span>
                                 </td>
 
                                 <td class="align-middle text-center">
@@ -82,7 +86,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="8" class="text-center">
+                            <td colspan="10" class="text-center">
                         <span class="text-danger">
                             Silahkan Cari dan Pilih Produk !
                         </span>

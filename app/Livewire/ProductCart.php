@@ -99,6 +99,7 @@ class ProductCart extends Component
             'id'      => $product['id'],
             'name'    => $product['product_name'],
             'qty'     => 1,
+            'kg'      => 1.00,  
             'price'   => $this->calculate($product)['price'],
             'weight'  => 1,
             'options' => [
