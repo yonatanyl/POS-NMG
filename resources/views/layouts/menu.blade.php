@@ -245,6 +245,11 @@
         </a>
         <ul class="c-sidebar-nav-dropdown-items">
             <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link {{ request()->routeIs('roles*') ? 'c-active' : '' }}" href="{{ route('roles.index') }}">
+                    <i class="c-sidebar-nav-icon bi bi-key" style="line-height: 1;"></i> Jabatan dan Perizinan
+                </a>
+            </li>
+            <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('users.create') ? 'c-active' : '' }}" href="{{ route('users.create') }}">
                     <i class="c-sidebar-nav-icon bi bi-person-plus" style="line-height: 1;"></i> Buat Pengguna
                 </a>
@@ -252,11 +257,6 @@
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('users*') ? 'c-active' : '' }}" href="{{ route('users.index') }}">
                     <i class="c-sidebar-nav-icon bi bi-person-lines-fill" style="line-height: 1;"></i> Semua Pengguna
-                </a>
-            </li>
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link {{ request()->routeIs('roles*') ? 'c-active' : '' }}" href="{{ route('roles.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-key" style="line-height: 1;"></i> Jabatan dan Perizinan
                 </a>
             </li>
         </ul>
@@ -299,7 +299,7 @@
         <ul class="c-sidebar-nav-dropdown-items">
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('info*') ? 'c-active' : '' }}" href="{{ route('info.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-info-circle" style="line-height: 1;"></i> Info app
+                    <i class="c-sidebar-nav-icon bi bi-info-circle" style="line-height: 1;"></i> Kredit
                 </a>
             </li>
         </ul>
