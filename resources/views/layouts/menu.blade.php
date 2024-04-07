@@ -295,5 +295,14 @@
             </li>
         </ul>
         @endcan
+        @can('applications_info')
+        <ul class="c-sidebar-nav-dropdown-items">
+            <li class="c-sidebar-nav-item">
+                <a class="c-sidebar-nav-link {{ request()->routeIs('info*') ? 'c-active' : '' }}" href="{{ route('info.index') }}">
+                    <i class="c-sidebar-nav-icon bi bi-info-circle" style="line-height: 1;"></i> Info app
+                </a>
+            </li>
+        </ul>
+        @endcan
     </li>
 @endcan

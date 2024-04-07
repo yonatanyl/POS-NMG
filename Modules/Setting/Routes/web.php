@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::patch('/settings/smtp', 'SettingController@updateSmtp')->name('settings.smtp.update');
     //General Settings
     Route::get('/settings', 'SettingController@index')->name('settings.index');
+    Route::get('/info', 'InfoController@index')->name('info.index');
     Route::patch('/settings', 'SettingController@update')->name('settings.update');
     // Units
     Route::resource('units', 'UnitsController')->except('show');
