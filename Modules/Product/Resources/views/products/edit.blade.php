@@ -108,7 +108,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="jumlah_kg">Jumlah KG <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="jumlah_kg" required value="{{ $product->jumlah_kg / 100 }}">
+                                        <input type="text" class="form-control" name="jumlah_kg" required value="{{ $product->jumlah_kg }}" step="0.01">
                                     </div>
                                 </div>
                             </div>
