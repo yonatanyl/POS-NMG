@@ -66,13 +66,14 @@ class SaleController extends Controller
                 'tax_amount' => Cart::instance('sale')->tax() * 100,
                 'discount_amount' => Cart::instance('sale')->discount() * 100,
             ]);
-            
+
             $jmlkg = $request->jmlkg;
             foreach (Cart::instance('sale')->content() as $cart_item) {
                 $product = Product::find($cart_item->id); // Use find() for non-failing check
                 if (!$product) {
                     return back()->with('error', 'Product ' . $cart_item->name . ' is no longer available.');
                 }
+
                 // dd($jmlkg);
                 SaleDetails::create([
                     'sale_id' => $sale->id,
