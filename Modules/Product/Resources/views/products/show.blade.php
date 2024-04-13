@@ -45,11 +45,11 @@
                                 </tr>
                                 <tr>
                                     <th>Kuantitas</th>
-                                    <td>{{ $product->product_quantity . ' ' . $product->product_unit }}</td>
+                                    <td>{{ $product->jumlah_kg}}</td>
                                 </tr>
                                 <tr>
                                     <th>Jumlah KG</th>
-                                    <td>{{ $product->jumlah_kg}}</td>
+                                    <td>{{ $product->product_quantity . ' ' . $product->product_unit }}</td>
                                 </tr>
                                 <tr>
                                     <th>Nilai Stok</th>

@@ -84,14 +84,14 @@
 
                                     <td class="align-middle">
                                     @foreach($sale->saleDetails as $item)
-                                        {{ $item->quantity }} Box
+                                        {{ $item->quantity }} KG
                                         <br>
                                     @endforeach
                                     </td>
 
                                     <td class="align-middle">
                                     @foreach($sale->saleDetails as $item)
-                                        {{ $item->jmlkg }} KG
+                                        {{ $item->jmlkg }} Box
                                         <br>
                                     @endforeach
                                     </td>

@@ -62,8 +62,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="product_quantity">Kuantitas <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control" name="product_quantity" required value="{{ $product->product_quantity }}" min="1">
+                                        <label for="jumlah_kg">Kuantitas <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="jumlah_kg" required value="{{ $product->jumlah_kg }}">
                                     </div>
                                 </div>
                             </div>
@@ -107,8 +107,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="jumlah_kg">Jumlah KG <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="jumlah_kg" required value="{{ $product->jumlah_kg }}" step="0.01">
+                                        <label for="product_quantity">Jumlah KG <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="product_quantity" required value="{{ $product->product_quantity }}" min="1" step="0.01"> 
                                     </div>
                                 </div>
                             </div>

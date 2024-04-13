@@ -116,7 +116,7 @@ class ProductCart extends Component
         ]);
 
         $this->check_quantity[$product['id']] = $product['product_quantity'];
-        $this->quantity[$product['id']] = 1;
+        $this->quantity[$product['id']] = 0.01;
         $this->discount_type[$product['id']] = 'fixed';
         $this->item_discount[$product['id']] = 0;
     }

@@ -21,10 +21,10 @@
                 <tr>
                     <th class="align-middle">Produk</th>
                     <th class="align-middle text-center">Harga Produk</th>
-                    <th class="align-middle text-center">Stok Barang</th>
                     <th class="align-middle text-center">Jumlah KG</th>
-                    <th class="align-middle text-center">Kuantitas</th>
+                    <th class="align-middle text-center">Stok Barang</th>
                     <th class="align-middle text-center">Kuantitas KG</th>
+                    <th class="align-middle text-center">Kuantitas</th>
                     <th class="align-middle text-center">Diskon</th>
                     <th class="align-middle text-center">Pajak</th>
                     <th class="align-middle text-center">Total Pembayaran</th>
@@ -55,7 +55,7 @@
                                     <span class="badge badge-info">{{ $cart_item->options->stock . ' ' . $cart_item->options->unit }}</span>
                                 </td>
                                 <td class="align-middle text-center text-center">
-                                    <span class="badge badge-info">{{ $cart_item->options->jmlkg }}</span>
+                                    <span class="badge badge-info">{{ $cart_item->options->jmlkg }} Box</span>
                                 </td>
 
                                 <td class="align-middle text-center">

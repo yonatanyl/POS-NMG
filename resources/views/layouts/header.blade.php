@@ -24,7 +24,7 @@
             <i class="bi bi-bell" style="font-size: 20px;"></i>
             <span class="badge badge-pill badge-danger">
             @php
-                $low_quantity_products = \Modules\Product\Entities\Product::select('id', 'product_quantity', 'product_stock_alert', 'product_code')->whereColumn('product_quantity', '<=', 'product_stock_alert')->get();
+                $low_quantity_products = \Modules\Product\Entities\Product::select('id', 'jumlah_kg', 'product_stock_alert', 'product_code')->whereColumn('jumlah_kg', '<=', 'product_stock_alert')->get();
                 echo $low_quantity_products->count();
             @endphp
             </span>

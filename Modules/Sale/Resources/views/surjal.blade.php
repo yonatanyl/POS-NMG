@@ -46,7 +46,7 @@
                             <tr>
                                 <th class="align-middle" scope="col" style="width: 5%;">No</th>
                                 <th class="align-middle" scope="col" style="width: 30%">Product</th>
-                                <th class="align-middle" scope="col">Quantity</th>
+                                <th class="align-middle" scope="col">Jumlah KG</th>
                                 <th class="align-middle" colspan="3">Telly Sheet</th>
                             </tr>
                             </thead>
@@ -70,7 +70,7 @@
 
                                     <td class="align-middle">
                                     @foreach($sale->saleDetails as $item)
-                                        {{ $item->quantity }} Box
+                                        {{ $item->quantity}} KG 
                                         <br>
                                     @endforeach
                                     </td>

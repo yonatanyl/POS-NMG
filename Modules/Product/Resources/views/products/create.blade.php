@@ -68,8 +68,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="product_quantity">Kuantitas <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control" name="product_quantity" required value="{{ old('product_quantity') }}" min="1">
+                                        <label for="jumlah_kg">Kuantitas <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="jumlah_kg" required value="1" min="0" max="20000">
                                     </div>
                                 </div>
                             </div>
@@ -113,8 +113,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="jumlah_kg">Jumlah KG <span class="text-danger">*</span></label>
-                                        <input type="number" class="form-control" name="jumlah_kg" required value="0.00" step="0.01" min="0" max="20000">
+                                        <label for="product_quantity">Jumlah KG <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="product_quantity" required value="{{ old('product_quantity') }}" min="1" step="0.01">
                                     </div>
                                 </div>
                             </div>
