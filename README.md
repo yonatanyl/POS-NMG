@@ -24,6 +24,7 @@
 
 # Admin Credentials
 > Email: zalzdarkent@gmail.com || Password: 87654321
+> Email: jonatan.jn61@gmail.com
 
 ## Demo
 ![Triangle POS](public/images/screenshot.jpg)
