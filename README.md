@@ -27,7 +27,7 @@
 > Email: jonatan.jn61@gmail.com
 
 
-## Triangle POS Features
+## POS Features
 
 - **Products Management & Barcode Printing**
 - **Stock Management**
