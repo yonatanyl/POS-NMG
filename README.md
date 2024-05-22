@@ -8,7 +8,7 @@
 
 # Local Installation
 
-- run `` git clone https://github.com/zalzdarkent/POS-first.git ``
+- run `` git clone https://github.com/yonatanyl/POS-NMG ``
 - run ``composer install `` 
 - run `` npm install ``
 - run ``npm run dev``
